@@ -1,11 +1,12 @@
 let liver_continer =document.getElementById("livre-continer")
 
-
+let alldomands = [];
 
 fetch("http://127.0.0.1:8000/api/v1/exchange-requests?status=open")
  .then(res => res.json())
  .then(data => {
    let domands = data.data
+   alldomands=domands
    console.log(domands)
    livercard(domands)
  }
@@ -91,3 +92,40 @@ domands.forEach(domand=>{
 
 
 
+let searche_input=document.getElementById("searche") 
+
+
+
+
+searche_input.addEventListener("input",()=>{
+  let text=searche_input.value.toLowerCase()
+  let result = alldomands.filter(domand=>domand.book.title.toLowerCase().includes(text))
+  console.log(result)
+  liver_continer.innerHTML=""
+  livercard(result)
+})
+
+
+
+let tous = document.getElementById("tous")
+let définitif = document.getElementById("définitif")
+let temporaire = document.getElementById("temporaire")
+
+
+définitif.addEventListener("click",()=>{
+  let result = alldomands.filter(domand=>domand.exchange_type==="permanent")
+  liver_continer.innerHTML=""
+  livercard(result)
+})
+
+temporaire.addEventListener("click",()=>{
+  let result = alldomands.filter(domand=>domand.exchange_type==="temporary")
+   liver_continer.innerHTML=""
+  livercard(result)
+})
+
+
+tous.addEventListener("click",()=>{
+   liver_continer.innerHTML=""
+  livercard(alldomands)
+})
