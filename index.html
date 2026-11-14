@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="max-w-[1200px] m-auto gap-10 flex flex-col  bg-amber-100">
+
+    <header class="flex justify-around mt-5 gap-80">
+        <div class="flex gap-5">
+            <h1
+                class="bg-[#644117]  w-10 h-10 flex justify-center items-center  rounded-tr-md rounded-tl-md rounded-br-md ">
+                B</h1>
+            <div class="flex">
+                <p>Book</p>
+                <p class="text-orange-200">Swap</p>
+            </div>
+        </div>
+        <ul class=" flex  gap-10">
+            <li><a href="">LIBRARY</a></li>
+            <li><a href="">A PROPOSE</a> </li>
+        </ul>
+        <a href=""><i class="fa-solid fa-circle-user"></i></a>
+    </header>
+
+    <section class=" flex flex-col gap-10 bg-[#644117] pl-10 h-90 rounded-md">
+      <div class="flex">
+        <div class=" flex flex-col gap-3 bg-[#644117] pl-10 h-90 rounded-md justify-around">
+            <h1 class="text-orange-300 text-xl" >Échangez. Lisez. Partagez.</h1>
+            <h1 class="text-5xl">Les livres sont faits pour circuler.</h1>
+            <h1>Trouvez votre prochaine lecture et échangez vos livres techniques avec les autres apprenants.</h1>
+
+      <button class=" bg-orange-500 rounded-md w-50 h-15 flex gap-5 justify-center items-center"><p>avoir les exchange</p> <i class="fa-solid fa-arrow-down-long"></i> </button>
+
+
+        </div>
+
+        <img src="trnava-university-BEEyeib-am8-unsplash.jpg" alt="LIBRARY" class="h-90 w-120 rounded-tr-md rounded-br-md opacity-40">
+
+
+
+      </div>
+
+    </section >
+    
+   
+
+        
+    
+
+
+    <section class="flex flex-col gap-10">
+         <h1 class="text-orange-400 text-xl">Demandes disponibles</h1>
+    <h1 class="font-bold text-3xl">Quel livre cherchez-vous ?</h1>
+    <div class="flex justify-between" id="filtrer">
+         <input type="text"  class="w-220 border h-15 rounded-md" 
+         placeholder="Quel livre cherchez-vous ?" > <button id="tous" class="tous w-25 h-15 rounded-md shadow-xl bg-orange-200">
+            tous</button><button id="définitif" class=" définitif w-25 h-15 rounded-md shadow-xl bg-orange-200">
+                définitif</button><button id="temporaire" class="temporaire w-25 h-15 rounded-md  bg-orange-200 shadow-xl">temporaire</button>
+            </div>
+   
+    
+        <ul class="flex gap-20 flex-wrap " id="livre-continer">
+
+          <div id="information" class="rounded-md bg-white flex flex-col gap-5 justify-center hidden">
+          
+
+          </div>
+           
+           
+          </ul>
+
+
+
+
+        
+    </section>
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
