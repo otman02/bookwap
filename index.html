@@ -11,16 +11,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="max-w-[1200px] m-auto gap-10 flex flex-col  bg-amber-100">
+<body class="max-w-[2200px] m-auto gap-10 flex flex-col  bg-amber-100">
 
     <header class="flex justify-around mt-5 gap-80">
         <div class="flex gap-5">
             <h1
-                class="bg-[#644117]  w-10 h-10 flex justify-center items-center  rounded-tr-md rounded-tl-md rounded-br-md ">
+                class="bg-[#644117]  w-10 h-10 flex justify-center items-center  rounded-tr-md rounded-tl-md rounded-br-md text-white font-bold">
                 B</h1>
             <div class="flex">
                 <p>Book</p>
-                <p class="text-orange-200">Swap</p>
+                <p class="text-orange-600">Swap</p>
             </div>
         </div>
         <ul class=" flex  gap-10">
@@ -31,13 +31,13 @@
     </header>
 
     <section class=" flex flex-col gap-10 bg-[#644117] pl-10 h-90 rounded-md">
-      <div class="flex">
+      <div class="flex justify-between">
         <div class=" flex flex-col gap-3 bg-[#644117] pl-10 h-90 rounded-md justify-around">
             <h1 class="text-orange-300 text-xl" >Échangez. Lisez. Partagez.</h1>
-            <h1 class="text-5xl">Les livres sont faits pour circuler.</h1>
-            <h1>Trouvez votre prochaine lecture et échangez vos livres techniques avec les autres apprenants.</h1>
+            <h1 class="text-5xl font-bold text-white">Les livres sont faits pour circuler.</h1>
+            <p class="text-amber-100 max-w-md">Trouvez votre prochaine lecture et échangez vos livres techniques avec les autres apprenants.</p>
 
-      <button class=" bg-orange-500 rounded-md w-50 h-15 flex gap-5 justify-center items-center"><p>avoir les exchange</p> <i class="fa-solid fa-arrow-down-long"></i> </button>
+      <button class=" bg-orange-500 rounded-md w-50 h-15 flex gap-5 justify-center items-center text-white font-semibold hover:bg-orange-600"><p>avoir les exchange</p> <i class="fa-solid fa-arrow-down-long"></i> </button>
 
 
         </div>
@@ -60,10 +60,10 @@
          <h1 class="text-orange-400 text-xl">Demandes disponibles</h1>
     <h1 class="font-bold text-3xl">Quel livre cherchez-vous ?</h1>
     <div class="flex justify-between" id="filtrer">
-         <input type="text"  class="w-220 border h-15 rounded-md" 
-         placeholder="Quel livre cherchez-vous ?" id="searche" > <button id="tous" class="tous w-25 h-15 rounded-md shadow-xl bg-orange-200">
-            tous</button><button id="définitif" class=" définitif w-25 h-15 rounded-md shadow-xl bg-orange-200">
-                définitif</button><button id="temporaire" class="temporaire w-25 h-15 rounded-md  bg-orange-200 shadow-xl">temporaire</button>
+         <input type="text"  class="w-400 border h-15 rounded-md px-4 bg-white" 
+         placeholder="Quel livre cherchez-vous ?" id="searche" > <button id="tous" class="tous w-25 h-15 rounded-md shadow-xl bg-orange-300 hover:bg-orange-300 cursor-pointer">
+            tous</button><button id="définitif" class=" définitif w-25 h-15 rounded-md shadow-xl bg-red-400 hover:bg-orange-300 cursor-pointer">
+                définitif</button><button id="temporaire" class="temporaire w-25 h-15 rounded-md  bg-green-400 shadow-xl hover:bg-orange-300 cursor-pointer">temporaire</button>
             </div>
    
     

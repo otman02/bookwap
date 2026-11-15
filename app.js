@@ -2,12 +2,22 @@ let liver_continer =document.getElementById("livre-continer")
 
 let alldomands = [];
 
+
+
+
+   liver_continer.innerHTML=`
+   <div class="w-full flex justify-center items-center py-10">
+   <i class="fa-solid fa-spinner animate-spin text-9xl text-orange-500"></i>
+   </div>
+   `
+
 fetch("http://127.0.0.1:8000/api/v1/exchange-requests?status=open")
  .then(res => res.json())
  .then(data => {
    let domands = data.data
    alldomands=domands
    console.log(domands)
+   liver_continer.innerHTML=""
    livercard(domands)
  }
 
@@ -27,14 +37,14 @@ domands.forEach(domand=>{
     
      liver_continer.innerHTML+= `
 
-     <div class="flex justify-center items-center gap-1 bg-[#c19a6b] rounded shadow-xl w-120 h-120">
+     <div class="flex justify-center items-center gap-1 bg-[#c19a6b] rounded-xl shadow-xl w-120 p-6">
       <div class="flex justify-center items-center border">
              <img src="http://127.0.0.1:8000${domand.book.image_url}" alt="" class=" w-25 h-35 ">
              <div class="w-40 flex flex-col gap-2">
                 
-                 <p class="text-orange-600">${domand.book.title}</p>
+                 <p class="text-amber-950 font-bold">${domand.book.title}</p>
                  <p>${domand.book.author}</p>
-                 <p class="${domand.exchange_type==="permanent" ? 'bg-orange-200':'bg-yellow-200'} w-25 rounded-md">${domand.exchange_type}</p>
+                 <p class="${domand.exchange_type==="permanent" ? 'bg-red-400':'bg-green-400'} w-25 rounded-md text-center text-sm font-semibold">${domand.exchange_type}</p>
                </div>
 
                
@@ -68,7 +78,7 @@ domands.forEach(domand=>{
        <img src="http://127.0.0.1:8000${offer.offered_book.image_url}" alt="" class=" w-25 h-35 ">
              <div class="w-40 flex flex-col gap-2">
                 
-                 <p class="text-orange-600">${offer.offered_book.title}</p>
+                 <p class="text-amber-950 font-bold">${offer.offered_book.title}</p>
                  <p>${offer.offered_book.author}</p>
                </div>
                
@@ -80,7 +90,7 @@ domands.forEach(domand=>{
       
        <img src="image.png" alt="" class=" w-25 h-35 ">
              <div class="w-40 flex flex-col gap-2">
-                <p class="text-orange-600">can you offer a book</p>
+                <p class="text-amber-950 font-bold">can you offer a book</p>
                  </div>
                 ` }
                
@@ -88,14 +98,11 @@ domands.forEach(domand=>{
    return offerdbooks
  }
       
-
+/////// the reaserch
 
 
 
 let searche_input=document.getElementById("searche") 
-
-
-
 
 searche_input.addEventListener("input",()=>{
   let text=searche_input.value.toLowerCase()
@@ -105,6 +112,9 @@ searche_input.addEventListener("input",()=>{
   livercard(result)
 })
 
+
+
+///// the filter
 
 
 let tous = document.getElementById("tous")
