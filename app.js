@@ -37,7 +37,7 @@ domands.forEach(domand=>{
     
      liver_continer.innerHTML+= `
 
-     <div class="flex justify-center items-center gap-1 bg-[#c19a6b] rounded-xl shadow-xl w-120 p-6">
+     <div class=" card flex justify-center items-center gap-1 bg-[#c19a6b] rounded-xl shadow-xl w-120 p-6" data-id="${domand.id}">
       <div class="flex justify-center items-center border">
              <img src="http://127.0.0.1:8000${domand.book.image_url}" alt="" class=" w-25 h-35 ">
              <div class="w-40 flex flex-col gap-2">
@@ -45,6 +45,7 @@ domands.forEach(domand=>{
                  <p class="text-amber-950 font-bold">${domand.book.title}</p>
                  <p>${domand.book.author}</p>
                  <p class="${domand.exchange_type==="permanent" ? 'bg-red-400':'bg-green-400'} w-25 rounded-md text-center text-sm font-semibold">${domand.exchange_type}</p>
+                 <p>start: ${domand.start_date}</p><p>end: ${domand.end_date}</p>
                </div>
 
                
@@ -138,4 +139,42 @@ temporaire.addEventListener("click",()=>{
 tous.addEventListener("click",()=>{
    liver_continer.innerHTML=""
   livercard(alldomands)
+})
+
+
+
+
+let information = document.getElementById("information")
+let details =document.getElementById("details")
+
+
+
+liver_continer.addEventListener("click", (event)=>{
+   details.innerHTML=""
+  let card = event.target.closest(".card")
+
+  if(!card)
+  {return}
+
+  let requests=alldomands.find(domand=>domand.id===Number(card.dataset.id))
+  
+  details.innerHTML+=   `<div class="flex">
+  <div><p class="font-bold">${requests.book.title}</p>
+
+      <img src="http://127.0.0.1:8000${requests.book.image_url}" alt="" class=" w-25 h-35 ">
+    <p>${requests.book.author}</p>
+    <p class="${requests.exchange_type==="permanent" ? 'bg-red-400':'bg-green-400'} w-20">${requests.exchange_type}</p>
+    <p>${requests.book.description}</p>
+    <p>start: ${requests.start_date}</p><p>end: ${requests.end_date}</p>
+    
+    </div>
+   <div> ${getoffers(requests.offers)}</div></div>`
+
+  information.classList.remove("hidden")
+  
+
+})
+
+information.addEventListener("click", () => {
+  information.classList.add("hidden")
 })
